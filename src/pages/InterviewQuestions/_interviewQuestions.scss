@@ -1,0 +1,12 @@
+/* Thicker and darker checkbox border */
+.form-check-input {
+  border: 2px solid #000 !important; /* darker border */
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+/* Optional: thicker border when checked */
+.form-check-input:checked {
+  background-color: #0d6efd; /* Bootstrap primary */
+  border: 2px solid #000 !important;
+}

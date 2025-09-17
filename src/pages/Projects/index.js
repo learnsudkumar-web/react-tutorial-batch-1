@@ -23,6 +23,9 @@ const Projects = () => {
         { name: "Vishal", project: "Cafe Website" },
         { name: "Yash", project: "Restaurant Website" },
         { name: "Shreya", project: "College Website" },
+        { name: "Nikita", project: "Library Website" },
+        { name: "Madhuri", project: "Travel Website" },
+        { name: "Kaveri", project: "Cafe Website" },
     ];
     return (
         <div className="container my-5">

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Lecture1 from "./Lecture1";
+import Lecture2 from "./Lecture2";
 
 const Lectures = () => {
   const [lectures, setLectures] = useState(reactLectures);
@@ -114,10 +115,11 @@ const reactLectures = [
   {
     id: "lecture2",
     name: "Lecture 2",
-    desc: "Project Setup, Intro to React, Node Js, DOM, Virtual DOM, Single Page Application, Conditional Rendering",
+    desc: "Conditional Rendering, use of Map, filter, Objects, Arrays to dynamically render data on the screen",
     date: "17/09/2025",
     status: "Done",
     disabled: false,
     isActive: false,
+    lectureComp: <Lecture2 />,
   },
 ];

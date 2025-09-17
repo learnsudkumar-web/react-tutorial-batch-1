@@ -14,6 +14,15 @@ export default function Assignments() {
                 "Coding: Create the homepage for your assigned Project."
             ]
         },
+        {
+            date: "17/09/2025",
+            lecture: "Lecture 2: Using .map(), .filter(), Objects & Arrays",
+            assignmentId: "A2",
+            assignmentList: [
+                "Summarize the lecture.",
+                "Implement the .map(), .filter(), Objects & Arrays in your projects created to render content dynamically."
+            ]
+        },
 
     ];
 

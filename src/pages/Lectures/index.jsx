@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Lecture1 from "./Lecture1";
 
 const Lectures = () => {
   const [lectures, setLectures] = useState(reactLectures);
@@ -84,6 +85,11 @@ const Lectures = () => {
                   )}
                 </tbody>
               </table>
+              <div className="lecture-notes">
+                {renderedNode && renderedNode.lectureComp
+                  ? renderedNode.lectureComp
+                  : null}
+              </div>
             </div>
           </div>
         </div>
@@ -103,6 +109,7 @@ const reactLectures = [
     status: "Done",
     disabled: false,
     isActive: true,
+    lectureComp: <Lecture1 />,
   },
   {
     id: "lecture2",

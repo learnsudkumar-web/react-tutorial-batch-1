@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import HomePage from './pages/Home';
 import Cookies from "js-cookie";
+import Tutorial from './pages/Tutorial';
 
 
 function App() {
@@ -30,7 +31,8 @@ function App() {
           <label className="form-check-label" for="flexSwitchCheckDefault">{isTutorialModeOn ? "Tutorial Mode" : "Student Mode"}</label>
         </div>
       </div>
-      {isTutorialModeOn ? <h1>Tutorial Mode</h1> : <HomePage />}
+
+      {isTutorialModeOn ? <Tutorial /> : <HomePage />}
 
     </div>
   )

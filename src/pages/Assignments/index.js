@@ -23,8 +23,29 @@ export default function Assignments() {
                 "Implement the .map(), .filter(), Objects & Arrays in your projects created to render content dynamically."
             ]
         },
+        {
+            date: "18/09/2025",
+            lecture: "Lecture 3: Ternary Operator, Event Handling, Props, Props Desctructuring, Importance of key in mapped lists/elements, Higher Order Components",
+            assignmentId: "A3",
+            assignmentList: [
+                "Summarize the lecture.",
+                "Implement Ternary Operator for conditional rendering",
+                "Implement Event handling to log a message on button click",
+                "Use props to pass data to child components",
+                "Explain why 'key' is important in mapped list & elements",
+                "What are Higher Order Components? write an example."
+            ]
+        },
 
-    ];
+    ].sort((a, b) => {
+        const [dayA, monthA, yearA] = a.date.split("/").map(Number);
+        const [dayB, monthB, yearB] = b.date.split("/").map(Number);
+
+        const dateA = new Date(yearA, monthA - 1, dayA);
+        const dateB = new Date(yearB, monthB - 1, dayB);
+
+        return dateB - dateA;
+    });
 
     return (
         <div className="container my-5">
@@ -33,7 +54,7 @@ export default function Assignments() {
                 <div key={assignment.assignmentId} className="card mb-3 shadow-sm">
                     <div className="card-body">
                         <h5 className="card-title">
-                            {index + 1}. {assignment.lecture}
+                            {assignment.lecture}
                         </h5>
                         <h6 className="card-subtitle mb-2 text-muted">
                             Date: {assignment.date} | ID: {assignment.assignmentId}

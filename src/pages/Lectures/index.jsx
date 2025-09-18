@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Lecture1 from "./Lecture1";
 import Lecture2 from "./Lecture2";
+import Lecture3 from "./Lecture3";
 
 const Lectures = () => {
   const [lectures, setLectures] = useState(reactLectures);
@@ -121,5 +122,15 @@ const reactLectures = [
     disabled: false,
     isActive: false,
     lectureComp: <Lecture2 />,
+  },
+  {
+    id: "lecture3",
+    name: "Lecture 3",
+    desc: "Ternary Operator, Event Handling, Props, Props Desctructuring, Importance of key in mapped lists/elements, Higher Order Components",
+    date: "18/09/2025",
+    status: "Done",
+    disabled: false,
+    isActive: false,
+    lectureComp: <Lecture3 />,
   },
 ];

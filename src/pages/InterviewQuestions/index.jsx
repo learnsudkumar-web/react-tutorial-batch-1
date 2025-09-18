@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import "./_interviewQuestions.scss";
 export default function InterviewQuestions() {
   const questions = [
+    "How to create a react Project?",
+    "What is Node Js?",
+    "Is React Js a Library or Framework?",
+    "What's the difference between a Library & Framework?",
     "What is the Virtual DOM?",
+    "What is Single Page Application and how does it work?",
     "Explain the difference between state and props.",
     "What are React hooks?",
     "What is useEffect and when to use it?",
@@ -12,6 +17,17 @@ export default function InterviewQuestions() {
     "Explain lazy loading in React.",
     "What are React keys and why are they important?",
     "How does React handle forms?",
+    "What is conditional rendering?",
+    "What's the difference between map() and forEach()?",
+    "When to use filter() and when to use find() methods of Array?",
+    "Write a code to sort Array of Numbers and Array of Strings.",
+    "Write a code to sort an array of object based on one of their keys.",
+    "What is ternary operator?",
+    "What are events?",
+    "What's an event-handler?",
+    "What are props?",
+    "What is prop-drilling?",
+    "What are Higher Order Components?",
   ];
 
   // Track ratings and checkbox states
@@ -32,7 +48,7 @@ export default function InterviewQuestions() {
 
   return (
     <div className="container my-5">
-      <h2 className="mb-4 text-center">React Interview Questions</h2>
+      <h2 className="mb-4 text-center">React Js Interview Questions</h2>
       <table className="table table-bordered table-striped align-middle text-center">
         <thead className="table-dark">
           <tr>

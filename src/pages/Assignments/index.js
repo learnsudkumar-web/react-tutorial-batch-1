@@ -36,6 +36,19 @@ export default function Assignments() {
                 "What are Higher Order Components? write an example."
             ]
         },
+        {
+            date: "22/09/2025",
+            lecture: "Lecture 4: Ternary Operator, Event Handling, Props, Props Desctructuring, Importance of key in mapped lists/elements, Higher Order Components",
+            assignmentId: "A4",
+            assignmentList: [
+                "Summarize the lecture.",
+                "Implement Props and Higher Order Components in your Project",
+                "Create a Signup form with username and password fields. On submit, log/show in the popup the values entered.",
+                "Explain what's Hooks?",
+                "What's useState and useRef? Write examples in the project",
+                "What are controlled components?"
+            ]
+        },
 
     ].sort((a, b) => {
         const [dayA, monthA, yearA] = a.date.split("/").map(Number);

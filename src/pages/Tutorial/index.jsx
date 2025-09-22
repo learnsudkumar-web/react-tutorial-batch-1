@@ -1,6 +1,7 @@
 import React from "react";
 import Tutorial2 from "./Tutorial2";
 import Tutorial3 from "./Tutorial3";
+import Tutorial4 from "./Tutorial4";
 
 const Tutorial = () => {
   const papaKaGyan = "Assignment kr lo!";
@@ -8,9 +9,10 @@ const Tutorial = () => {
 
   return (
     <div className="tutorial-homepage">
-      <Tutorial3 size={17} gyan={papaKaGyan} />
+      {/* <Tutorial3 size={17} gyan={papaKaGyan} />
       <hr></hr>
-      <Tutorial2 />
+      <Tutorial2 /> */}
+      <Tutorial4 />
     </div>
   );
 };

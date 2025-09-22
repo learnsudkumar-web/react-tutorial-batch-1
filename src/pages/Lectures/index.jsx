@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Lecture1 from "./Lecture1";
 import Lecture2 from "./Lecture2";
 import Lecture3 from "./Lecture3";
+import Lecture4 from "./Lecture4";
 
 const Lectures = () => {
   const [lectures, setLectures] = useState(reactLectures);
@@ -132,5 +133,15 @@ const reactLectures = [
     disabled: false,
     isActive: false,
     lectureComp: <Lecture3 />,
+  },
+  {
+    id: "lecture4",
+    name: "Lecture 4",
+    desc: "Props and Higher order component Revision, Form Handling, Hooks, useState, useRef, Controlled Components",
+    date: "22/09/2025",
+    status: "Done",
+    disabled: false,
+    isActive: false,
+    lectureComp: <Lecture4 />,
   },
 ];

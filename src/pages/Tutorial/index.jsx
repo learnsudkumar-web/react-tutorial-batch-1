@@ -3,6 +3,7 @@ import Tutorial2 from "./Tutorial2";
 import Tutorial3 from "./Tutorial3";
 import Tutorial4 from "./Tutorial4";
 import Tutorial5 from "./Tutorial5";
+import Tutorial6 from "./Tutorial6";
 
 const Tutorial = () => {
   const papaKaGyan = "Assignment kr lo!";
@@ -13,7 +14,7 @@ const Tutorial = () => {
       {/* <Tutorial3 size={17} gyan={papaKaGyan} />
       <hr></hr>
       <Tutorial2 /> */}
-      <Tutorial5 />
+      <Tutorial6 />
     </div>
   );
 };

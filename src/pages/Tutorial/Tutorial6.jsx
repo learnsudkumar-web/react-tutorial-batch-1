@@ -4,7 +4,9 @@ import React, {
   useEffect,
   useMemo,
   useCallback,
+  useContext,
 } from "react";
+import { TutorialContext } from ".";
 
 const Tutorial6 = () => {
   console.log("Tutorial 6 has rendered!");
@@ -229,6 +231,7 @@ export default Tutorial6;
 
 function ChotaComponent() {
   // Cleanup the values - performing the task right before unmounting
+  const commonData = useContext(TutorialContext);
   useEffect(() => {
     let myCount = 0;
     let timer = setInterval(() => {
@@ -244,6 +247,7 @@ function ChotaComponent() {
   return (
     <>
       <h1>I'm a chota component!</h1>
+      <p>{`The Common data in Chota component: ${commonData}`}</p>
     </>
   );
 }

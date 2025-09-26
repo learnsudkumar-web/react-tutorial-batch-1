@@ -7,6 +7,7 @@ import Tutorial6 from "./Tutorial6";
 import Tutorial7 from "./Tutorial7";
 import Tutorial8 from "./Tutorial8";
 import { Outlet } from "react-router-dom";
+import Tutorial9 from "./Tutorial9";
 
 export const TutorialContext = createContext();
 
@@ -21,7 +22,8 @@ const Tutorial = () => {
       <Tutorial2 /> */}
       <Outlet />
       <TutorialContext.Provider value="Some common data">
-        <Tutorial8 name="React Tutorial 8" />
+        {/* <Tutorial8 name="React Tutorial 8" /> */}
+        <Tutorial9 />
       </TutorialContext.Provider>
     </div>
   );

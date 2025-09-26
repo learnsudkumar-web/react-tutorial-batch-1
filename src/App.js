@@ -10,7 +10,74 @@ import Tutorial3 from './pages/Tutorial/Tutorial3';
 import { create } from 'react-test-renderer';
 import Assignments from './pages/Assignments';
 import InterviewQuestions from './pages/InterviewQuestions';
-// import { BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Provider, } from 'react-redux';
+import { combineReducers } from 'redux';
+
+import { createStore } from 'redux';
+
+const initialValue = {
+  users: {
+    user1: {
+      name: "Abc",
+      email: "abc@gmail.com"
+    },
+    user2: {
+      name: "Pqr",
+      email: "pqr@gmail.com"
+    },
+  },
+  products: {
+    sanitizer: {
+      brand: "Dettol",
+      price: 10,
+    }
+  }
+}
+
+initialValue.users.user1.name = "acbcd";
+const reducer = (state = initialValue, action) => {
+  switch (action.type) {
+    case "addUser": {
+      const newUser = action.payload;
+      let key = Object.keys(newUser);
+      let value = Object.values(newUser)[0];
+      console.log({ key })
+      console.log({ value });
+
+      return {
+        ...state,
+        users: {
+          ...state.users,
+          [key]: { ...value }
+        }
+      };
+    }
+    case "updateUser": {
+      const { updateKey, updateChildKey, updatedValue } = action.payload;
+
+      return {
+        ...state,
+        users: {
+          ...state.users,
+          [updateKey]: {
+            ...state.users[updateKey],
+            [updateChildKey]: updatedValue,
+          },
+        },
+      };
+    }
+
+    default:
+      return state;
+  }
+};
+const rootReducer = combineReducers({ app: reducer });
+const store = createStore(reducer);
+
+
+
+
+
 
 export const AppContext = createContext();
 
@@ -34,37 +101,41 @@ function App() {
 
   return (
     <div className='' id=''>
+      <div>
 
-      <AppContext.Provider value={{ isLoggedIn: true, username: "Sudhanshu" }}>
-        <div className={`dev-mode d-flex justify-content-center border ${isTutorialModeOn && "bg-warning"}`} >
-          <div className="form-check form-switch">
-            <input className="form-check-input" type="checkbox" onChange={handleTutorialMode} checked={isTutorialModeOn} role="switch" id="flexSwitchCheckDefault" />
-            <label className="form-check-label" for="flexSwitchCheckDefault">{isTutorialModeOn ? "Tutorial Mode" : "Student Mode"}</label>
-          </div>
-        </div>
+        <Provider store={store}>
+          <AppContext.Provider value={{ isLoggedIn: true, username: "Sudhanshu" }}>
+            <div className={`dev-mode d-flex justify-content-center border ${isTutorialModeOn && "bg-warning"}`} >
+              <div className="form-check form-switch">
+                <input className="form-check-input" type="checkbox" onChange={handleTutorialMode} checked={isTutorialModeOn} role="switch" id="flexSwitchCheckDefault" />
+                <label className="form-check-label" for="flexSwitchCheckDefault">{isTutorialModeOn ? "Tutorial Mode" : "Student Mode"}</label>
+              </div>
+            </div>
 
-        <Router>
-          <nav>
-            <button className='btn btn-default'><Link to="/">Homepage</Link></button>
-            <button className='btn btn-default'><Link to="/tutorial">Tutorial</Link></button>
-            <button className='btn btn-default'><Link to="/tutorial/tutorial3">Tutorial3</Link></button>
-            <button className='btn btn-default'><Link to="/tutorial/tutorial4">Tutorial4</Link></button>
-            <button className='btn btn-default'><Link to="/assignments">Assignments</Link></button>
-            <button className='btn btn-default'><Link to="/interview">Interview Questions</Link></button>
-          </nav>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/tutorial" element={<Tutorial />}>
-              <Route path='tutorial3' element={<Tutorial3 />} />
-              <Route path='tutorial4' element={<Tutorial4 />} />
-            </Route>
-            <Route path="/assignments" element={<Assignments />} />
-            <Route path="/interview" element={<InterviewQuestions />} />
-          </Routes>
-        </Router>
+            <Router>
+              <nav>
+                <button className='btn btn-default'><Link to="/">Homepage</Link></button>
+                <button className='btn btn-default'><Link to="/tutorial">Tutorial</Link></button>
+                <button className='btn btn-default'><Link to="/tutorial/tutorial3">Tutorial3</Link></button>
+                <button className='btn btn-default'><Link to="/tutorial/tutorial4">Tutorial4</Link></button>
+                <button className='btn btn-default'><Link to="/assignments">Assignments</Link></button>
+                <button className='btn btn-default'><Link to="/interview">Interview Questions</Link></button>
+              </nav>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/tutorial" element={<Tutorial />}>
+                  <Route path='tutorial3' element={<Tutorial3 />} />
+                  <Route path='tutorial4' element={<Tutorial4 />} />
+                </Route>
+                <Route path="/assignments" element={<Assignments />} />
+                <Route path="/interview" element={<InterviewQuestions />} />
+              </Routes>
+            </Router>
 
-        {/* {isTutorialModeOn ? <Tutorial /> : <HomePage />} */}
-      </AppContext.Provider>
+            {/* {isTutorialModeOn ? <Tutorial /> : <HomePage />} */}
+          </AppContext.Provider>
+        </Provider>
+      </div>
     </div>
 
   )
